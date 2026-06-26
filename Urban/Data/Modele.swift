@@ -14,10 +14,12 @@ struct Art: Identifiable, Hashable {
     let description: String
     let type: String
     let condition: String
-    let date: Date
+    let date: String
     let auteur: String
     let image: String
+    let ville: String
     let localisation: String
+    let coordinates: String
 }
 
 struct Artist: Identifiable, Hashable {

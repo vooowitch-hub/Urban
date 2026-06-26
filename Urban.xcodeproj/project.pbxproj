@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		F5FDEE1C2FE96F1100F891F5 /* Urban.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Urban.app; path = "/Users/apprenant168/Urban/App/build/Debug-iphoneos/Urban.app"; sourceTree = "<absolute>"; };
+		F5FDF0DB2FED128A00F891F5 /* Urban.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Urban.app; path = "/Users/apprenant168/Urban/App/build/Debug-iphoneos/Urban.app"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -65,7 +65,7 @@
 			packageProductDependencies = (
 			);
 			productName = Urban;
-			productReference = F5FDEE1C2FE96F1100F891F5 /* Urban.app */;
+			productReference = F5FDF0DB2FED128A00F891F5 /* Urban.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */

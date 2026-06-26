@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+  //  @State private var artSearch: [Art] = arts
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        List {
+//            ForEach(artSearch) { exemple in
+//                //Image(systemName: exemple.image)
+//                Text(exemple.nom)
+//                //Text(exemple.localisation)
+//            }
         }
-        .padding()
     }
 }
 
