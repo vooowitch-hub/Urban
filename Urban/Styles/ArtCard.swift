@@ -7,30 +7,53 @@
 
 import SwiftUI
 
-
-struct ArtCard: View {
-    @State private var artSearch: [Art] = arts
+struct ArtDetails: View {
     
+    let artDetails: Art
+
     var body: some View {
-        NavigationStack() {
-                List(artSearch) { eachArt in
-                    NavigationLink(destination: ArtDetails(artDetails: eachArt)) {
-                            ArtLine(artLine: eachArt)
+        ScrollView {
+            Image(artDetails.image)
+                .resizable()
+                .frame(height: 280)
+                .frame(maxWidth: .infinity).aspectRatio(2/3 , contentMode: .fit)
+                .overlay {
+                    Rectangle().fill(.backgroundGray).opacity(0.4)
                         }
-                }
-                .navigationTitle("Liste des Street arts")
-        }
+
+            VStack(alignment: .leading, spacing: 4) {
+                Text(artDetails.nom).font(.title2).bold().foregroundStyle(.accent)
+                Spacer()
+                
+                Text(artDetails.description)
+                    .foregroundStyle(.mainText)
+                   Spacer()
+                //Grid ?
+                
+                Text("Type : \(artDetails.type)")
+                Text("Condition : \(artDetails.condition)")
+                Text("Date : \(artDetails.date)")
+                Text("Auteur : \(artDetails.auteur)")
+                Text("Localisation : \(artDetails.localisation) \(artDetails.coordinates)")
+                Spacer()
+                
+                Image("map")
+                
+            }.font(.footnote)
+            .padding()
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }.ignoresSafeArea()
     }
 }
 
 #Preview {
-    ArtCard()
-}
-
-struct ArtCardDetails: View {
-    @Binding var artSearch: Art
-    
-    var body: some View {
+    struct PreviewArtCardDetails : View {
+        @State private var artCardDetails = arts[1]
         
+        var body : some View {
+            ArtDetails(artDetails: artCardDetails)
+        }
     }
+    
+    return PreviewArtCardDetails()
 }

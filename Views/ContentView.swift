@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
-  //  @State private var artSearch: [Art] = arts
+
+    @State private var artSearch: [Art] = arts
+    @State private var typeArt = ""
     var body: some View {
-        List {
-//            ForEach(artSearch) { exemple in
-//                //Image(systemName: exemple.image)
-//                Text(exemple.nom)
-//                //Text(exemple.localisation)
-//            }
+        
+        NavigationStack() {
+                        
+            List(artSearch) { eachArt in
+                NavigationLink(destination: ArtDetails(artDetails: eachArt)) {
+                    ArtLine(artLine: eachArt)
+                }
+            }
+            .navigationTitle("Liste des Street arts")
         }
     }
 }
